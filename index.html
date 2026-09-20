@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | UOL Lost &amp; Found</title>
+
+  <!-- Tailwind CSS and Flowbite (loaded from the internet) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- our own CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="flex flex-col min-h-screen text-gray-800 bg-gray-50">
+
+  <!-- ========== NAVBAR (same on every page) ========== -->
+  <header>
+    <nav id="navbar" class="bg-white border-b border-gray-200">
+      <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+        <a href="index.html" class="text-xl font-bold text-blue-800">UOL Lost &amp; Found</a>
+
+        <!-- menu button (shown on phones only) -->
+        <button data-collapse-toggle="navbar-menu" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+
+        <div id="navbar-menu" class="hidden w-full md:block md:w-auto">
+          <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:p-0 md:mt-0 md:space-x-6 md:border-0 md:bg-white">
+            <li><a href="index.html" data-page="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Home</a></li>
+            <li><a href="src/pages/about.html" data-page="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">About</a></li>
+            <li><a href="src/pages/contact.html" data-page="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Contact</a></li>
+            <li><a href="src/pages/signup.html" data-page="signup.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Sign Up</a></li>
+            <li><a href="src/pages/signin.html" class="block px-4 py-2 mt-2 text-white bg-blue-700 rounded-lg md:mt-0 hover:bg-blue-800">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ========== END NAVBAR ========== -->
+
+  <main class="flex-grow">
+    <!-- ========== HERO SECTION ========== -->
+    <section class="bg-blue-900">
+      <div class="grid items-center max-w-screen-xl gap-8 px-4 py-14 mx-auto lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <h1 class="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">Lost something on campus? Start your search here.</h1>
+          <p class="mb-6 text-lg text-blue-100">UOL Lost &amp; Found brings lost and found items from every corner of the university into one place. Look through the list, or tell us what you lost or found.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#search" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-blue-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-blue-300">Search items</a>
+            <a href="src/pages/contact.html" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Report an item</a>
+          </div>
+        </div>
+        <div class="hidden lg:block lg:col-span-5">
+          <img src="assets/images/hero.jpg" alt="University of Lahore campus" class="w-full rounded-lg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 1: Notice banner -->
+    <div class="px-4 py-3 text-sm text-center text-yellow-800 bg-yellow-50 border-b border-yellow-200">
+      Found an ID card, keys or a wallet? Please hand it in at the Security Office, Main Gate.
+    </div>
+
+    <!-- COMPONENT 2: Search form -->
+    <section id="search" class="bg-white border-b border-gray-200">
+      <div class="max-w-screen-xl px-4 py-8 mx-auto">
+        <h2 class="mb-4 text-2xl font-bold text-gray-900">Search lost and found items</h2>
+        <form id="search-form" class="grid gap-4 md:grid-cols-4">
+          <input type="text" id="search-keyword" aria-label="Item name or place" placeholder="Item name or place, for example wallet or library" class="block w-full p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 md:col-span-2" />
+          <select id="search-category" aria-label="Category" class="block w-full p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
+            <option value="all">All categories</option>
+            <option value="id-card">ID cards</option>
+            <option value="books">Books</option>
+            <option value="electronics">Electronics</option>
+            <option value="keys">Keys</option>
+            <option value="bags">Bags</option>
+            <option value="clothing">Clothing</option>
+          </select>
+          <button type="submit" class="px-5 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- COMPONENT 3: Item cards, COMPONENT 4: Lost / Found badges -->
+    <section class="max-w-screen-xl px-4 py-12 mx-auto">
+      <h2 class="mb-6 text-2xl font-bold text-gray-900">Recently reported items</h2>
+      <div id="items-list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+        <div class="item-card p-5 bg-white border border-gray-200 rounded-lg shadow-sm" data-category="id-card">
+          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Found</span>
+          <h3 class="mt-3 mb-1 text-lg font-semibold text-gray-900">Student ID card</h3>
+          <p class="mb-3 text-sm text-gray-600">Blue lanyard, photo card. Left on a table in the cafeteria.</p>
+          <p class="text-sm text-gray-500">Place: Cafeteria<br />Date: 17 Sep 2026</p>
+          <a href="src/pages/contact.html" class="inline-block mt-4 text-sm font-medium text-blue-700 hover:underline">Contact the office</a>
+        </div>
+
+        <div class="item-card p-5 bg-white border border-gray-200 rounded-lg shadow-sm" data-category="electronics">
+          <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Lost</span>
+          <h3 class="mt-3 mb-1 text-lg font-semibold text-gray-900">Casio scientific calculator</h3>
+          <p class="mb-3 text-sm text-gray-600">Model fx-991, name written on the back cover.</p>
+          <p class="text-sm text-gray-500">Place: Room B-204<br />Date: 16 Sep 2026</p>
+          <a href="src/pages/contact.html" class="inline-block mt-4 text-sm font-medium text-blue-700 hover:underline">Contact the office</a>
+        </div>
+
+        <div class="item-card p-5 bg-white border border-gray-200 rounded-lg shadow-sm" data-category="keys">
+          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Found</span>
+          <h3 class="mt-3 mb-1 text-lg font-semibold text-gray-900">Car keys</h3>
+          <p class="mb-3 text-sm text-gray-600">Two keys on a blue keychain with a small torch.</p>
+          <p class="text-sm text-gray-500">Place: Parking area<br />Date: 15 Sep 2026</p>
+          <a href="src/pages/contact.html" class="inline-block mt-4 text-sm font-medium text-blue-700 hover:underline">Contact the office</a>
+        </div>
+
+        <div class="item-card p-5 bg-white border border-gray-200 rounded-lg shadow-sm" data-category="bags">
+          <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Lost</span>
+          <h3 class="mt-3 mb-1 text-lg font-semibold text-gray-900">Black backpack</h3>
+          <p class="mb-3 text-sm text-gray-600">Contains notebooks and a water bottle. Zip on the front is broken.</p>
+          <p class="text-sm text-gray-500">Place: Bus stop near Gate 2<br />Date: 14 Sep 2026</p>
+          <a href="src/pages/contact.html" class="inline-block mt-4 text-sm font-medium text-blue-700 hover:underline">Contact the office</a>
+        </div>
+
+        <div class="item-card p-5 bg-white border border-gray-200 rounded-lg shadow-sm" data-category="books">
+          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Found</span>
+          <h3 class="mt-3 mb-1 text-lg font-semibold text-gray-900">Data Structures textbook</h3>
+          <p class="mb-3 text-sm text-gray-600">Green cover with sticky notes between the pages.</p>
+          <p class="text-sm text-gray-500">Place: Library reading hall<br />Date: 13 Sep 2026</p>
+          <a href="src/pages/contact.html" class="inline-block mt-4 text-sm font-medium text-blue-700 hover:underline">Contact the office</a>
+        </div>
+
+        <div class="item-card p-5 bg-white border border-gray-200 rounded-lg shadow-sm" data-category="clothing">
+          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Found</span>
+          <h3 class="mt-3 mb-1 text-lg font-semibold text-gray-900">Grey hoodie</h3>
+          <p class="mb-3 text-sm text-gray-600">Size M, left on the bleachers after a cricket match.</p>
+          <p class="text-sm text-gray-500">Place: Sports ground<br />Date: 12 Sep 2026</p>
+          <a href="src/pages/contact.html" class="inline-block mt-4 text-sm font-medium text-blue-700 hover:underline">Contact the office</a>
+        </div>
+
+      </div>
+      <p id="no-results" class="hidden mt-6 text-gray-600">No items match your search. Try a different word or category.</p>
+    </section>
+
+    <!-- COMPONENT 5: How it works (steps) -->
+    <section class="bg-white border-y border-gray-200">
+      <div class="max-w-screen-xl px-4 py-12 mx-auto">
+        <h2 class="mb-8 text-2xl font-bold text-gray-900">How it works</h2>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div>
+            <div class="flex items-center justify-center w-10 h-10 mb-3 font-bold text-blue-800 bg-blue-100 rounded-full">1</div>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900">Report</h3>
+            <p class="text-gray-600">Use the contact form to tell us what you lost or found, where, and when.</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-10 h-10 mb-3 font-bold text-blue-800 bg-blue-100 rounded-full">2</div>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900">We match</h3>
+            <p class="text-gray-600">The office compares new reports with the items handed in and lists them on this site.</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-10 h-10 mb-3 font-bold text-blue-800 bg-blue-100 rounded-full">3</div>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900">Collect</h3>
+            <p class="text-gray-600">Visit the office with your student ID and describe the item to collect it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 6: Categories grid -->
+    <section class="max-w-screen-xl px-4 py-12 mx-auto">
+      <h2 class="mb-6 text-2xl font-bold text-gray-900">Items we handle</h2>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div class="p-4 text-center bg-white border border-gray-200 rounded-lg">ID cards</div>
+        <div class="p-4 text-center bg-white border border-gray-200 rounded-lg">Books</div>
+        <div class="p-4 text-center bg-white border border-gray-200 rounded-lg">Electronics</div>
+        <div class="p-4 text-center bg-white border border-gray-200 rounded-lg">Keys</div>
+        <div class="p-4 text-center bg-white border border-gray-200 rounded-lg">Bags</div>
+        <div class="p-4 text-center bg-white border border-gray-200 rounded-lg">Clothing</div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 7: Office cards, COMPONENT 8: Opening hours table -->
+    <section class="bg-white border-y border-gray-200">
+      <div class="max-w-screen-xl px-4 py-12 mx-auto">
+        <h2 class="mb-6 text-2xl font-bold text-gray-900">Where to hand in or collect items</h2>
+        <div class="grid gap-6 mb-8 md:grid-cols-3">
+          <div class="p-5 border border-gray-200 rounded-lg bg-gray-50">
+            <h3 class="mb-1 text-lg font-semibold text-gray-900">Security Office</h3>
+            <p class="text-gray-600">Main Gate. Best place for keys, wallets and mobile phones.</p>
+          </div>
+          <div class="p-5 border border-gray-200 rounded-lg bg-gray-50">
+            <h3 class="mb-1 text-lg font-semibold text-gray-900">Library Help Desk</h3>
+            <p class="text-gray-600">Ground floor. Books, notebooks, calculators and stationery.</p>
+          </div>
+          <div class="p-5 border border-gray-200 rounded-lg bg-gray-50">
+            <h3 class="mb-1 text-lg font-semibold text-gray-900">Admin Block Reception</h3>
+            <p class="text-gray-600">Room 12. ID cards, documents and everything else.</p>
+          </div>
+        </div>
+
+        <div class="relative overflow-x-auto border border-gray-200 rounded-lg">
+          <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 bg-gray-100">
+              <tr>
+                <th scope="col" class="px-6 py-3">Office</th>
+                <th scope="col" class="px-6 py-3">Days</th>
+                <th scope="col" class="px-6 py-3">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-gray-200">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Security Office</th>
+                <td class="px-6 py-4">Monday to Saturday</td>
+                <td class="px-6 py-4">8:00 AM to 8:00 PM</td>
+              </tr>
+              <tr class="bg-white border-b border-gray-200">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Library Help Desk</th>
+                <td class="px-6 py-4">Monday to Friday</td>
+                <td class="px-6 py-4">9:00 AM to 5:00 PM</td>
+              </tr>
+              <tr class="bg-white">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Admin Block Reception</th>
+                <td class="px-6 py-4">Monday to Friday</td>
+                <td class="px-6 py-4">9:00 AM to 4:00 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 9: Safety tips (list group) -->
+    <section class="max-w-screen-xl px-4 py-12 mx-auto">
+      <h2 class="mb-6 text-2xl font-bold text-gray-900">Tips to avoid losing things</h2>
+      <ul class="max-w-2xl text-gray-900 bg-white border border-gray-200 rounded-lg">
+        <li class="w-full px-4 py-3 border-b border-gray-200">Write your name and phone number inside books and bags.</li>
+        <li class="w-full px-4 py-3 border-b border-gray-200">Check your seat and desk before leaving a classroom.</li>
+        <li class="w-full px-4 py-3 border-b border-gray-200">Keep your student ID in a card holder instead of a loose pocket.</li>
+        <li class="w-full px-4 py-3">Report a lost item on the same day. Items are kept for 30 days.</li>
+      </ul>
+    </section>
+
+    <!-- COMPONENT 10: Call to action -->
+    <section class="bg-blue-900">
+      <div class="max-w-screen-xl px-4 py-12 mx-auto text-center">
+        <h2 class="mb-3 text-3xl font-bold text-white">Found something that is not yours?</h2>
+        <p class="mb-6 text-blue-100">Send us the details and we will help the owner get it back.</p>
+        <a href="src/pages/contact.html" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-blue-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-blue-300">Report a found item</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER (same on every page) ========== -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-screen-xl p-4 mx-auto md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="index.html" class="text-lg font-bold text-blue-800">UOL Lost &amp; Found</a>
+        <ul class="flex flex-wrap items-center mt-4 text-sm font-medium text-gray-500 sm:mt-0">
+          <li><a href="index.html" class="hover:underline me-4 md:me-6">Home</a></li>
+          <li><a href="src/pages/about.html" class="hover:underline me-4 md:me-6">About</a></li>
+          <li><a href="src/pages/contact.html" class="hover:underline me-4 md:me-6">Contact</a></li>
+          <li><a href="src/pages/signin.html" class="hover:underline">Sign In</a></li>
+        </ul>
+      </div>
+      <hr class="my-4 border-gray-200 sm:mx-auto lg:my-6" />
+      <span class="block text-sm text-gray-500 sm:text-center">&copy; <span id="year">2026</span> UOL Lost &amp; Found. Web Engineering, Assignment 01, The University of Lahore.</span>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

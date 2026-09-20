@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | UOL Lost &amp; Found</title>
+
+  <!-- Tailwind CSS and Flowbite (loaded from the internet) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- our own CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body class="flex flex-col min-h-screen text-gray-800 bg-gray-50">
+
+  <!-- ========== NAVBAR (same on every page) ========== -->
+  <header>
+    <nav id="navbar" class="bg-white border-b border-gray-200">
+      <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+        <a href="../../index.html" class="text-xl font-bold text-blue-800">UOL Lost &amp; Found</a>
+
+        <!-- menu button (shown on phones only) -->
+        <button data-collapse-toggle="navbar-menu" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+
+        <div id="navbar-menu" class="hidden w-full md:block md:w-auto">
+          <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:p-0 md:mt-0 md:space-x-6 md:border-0 md:bg-white">
+            <li><a href="../../index.html" data-page="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Home</a></li>
+            <li><a href="about.html" data-page="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">About</a></li>
+            <li><a href="contact.html" data-page="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Contact</a></li>
+            <li><a href="signup.html" data-page="signup.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Sign Up</a></li>
+            <li><a href="signin.html" class="block px-4 py-2 mt-2 text-white bg-blue-700 rounded-lg md:mt-0 hover:bg-blue-800">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ========== END NAVBAR ========== -->
+
+  <main class="flex-grow">
+    <section class="flex justify-center px-4 py-12">
+
+      <!-- COMPONENT 1: Card -->
+      <div class="w-full max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8">
+        <h1 class="mb-2 text-2xl font-bold text-gray-900">Create an account</h1>
+
+        <!-- COMPONENT 2: Alert (information message) -->
+        <div class="p-4 mb-6 text-sm text-blue-800 rounded-lg bg-blue-50" role="alert">
+          Use your university email address if you have one.
+        </div>
+
+        <form id="signup-form" novalidate>
+
+          <!-- COMPONENT 3: Form inputs -->
+          <div class="mb-5 field">
+            <label for="fullname" class="block mb-2 text-sm font-medium text-gray-900">Full name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" class="block w-full p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" />
+          </div>
+
+          <div class="mb-5 field">
+            <label for="signup-email" class="block mb-2 text-sm font-medium text-gray-900">Email address</label>
+            <input type="email" id="signup-email" name="email" placeholder="name@example.com" class="block w-full p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" />
+          </div>
+
+          <div class="mb-5 field">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+            <input type="password" id="password" name="password" placeholder="At least 8 characters with a number" class="block w-full p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" />
+          </div>
+
+          <div class="mb-5 field">
+            <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Type the password again" class="block w-full p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" />
+          </div>
+
+          <!-- COMPONENT 4: Checkbox -->
+          <div class="mb-6 field">
+            <div class="flex items-center">
+              <input type="checkbox" id="terms" class="w-4 h-4 text-blue-600 border-gray-300 rounded bg-gray-50 focus:ring-blue-500" />
+              <label for="terms" class="text-sm text-gray-900 ms-2">I agree to the terms and conditions</label>
+            </div>
+          </div>
+
+          <!-- COMPONENT 5: Button -->
+          <button type="submit" class="w-full px-5 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Create account</button>
+
+          <p class="mt-4 text-sm text-gray-500">Already have an account? <a href="signin.html" class="font-medium text-blue-700 hover:underline">Sign in.</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER (same on every page) ========== -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-screen-xl p-4 mx-auto md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="../../index.html" class="text-lg font-bold text-blue-800">UOL Lost &amp; Found</a>
+        <ul class="flex flex-wrap items-center mt-4 text-sm font-medium text-gray-500 sm:mt-0">
+          <li><a href="../../index.html" class="hover:underline me-4 md:me-6">Home</a></li>
+          <li><a href="about.html" class="hover:underline me-4 md:me-6">About</a></li>
+          <li><a href="contact.html" class="hover:underline me-4 md:me-6">Contact</a></li>
+          <li><a href="signin.html" class="hover:underline">Sign In</a></li>
+        </ul>
+      </div>
+      <hr class="my-4 border-gray-200 sm:mx-auto lg:my-6" />
+      <span class="block text-sm text-gray-500 sm:text-center">&copy; <span id="year">2026</span> UOL Lost &amp; Found. Web Engineering, Assignment 01, The University of Lahore.</span>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/form.js"></script>
+</body>
+</html>

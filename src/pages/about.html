@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | UOL Lost &amp; Found</title>
+
+  <!-- Tailwind CSS and Flowbite (loaded from the internet) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- our own CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body class="flex flex-col min-h-screen text-gray-800 bg-gray-50">
+
+  <!-- ========== NAVBAR (same on every page) ========== -->
+  <header>
+    <nav id="navbar" class="bg-white border-b border-gray-200">
+      <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+        <a href="../../index.html" class="text-xl font-bold text-blue-800">UOL Lost &amp; Found</a>
+
+        <!-- menu button (shown on phones only) -->
+        <button data-collapse-toggle="navbar-menu" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+
+        <div id="navbar-menu" class="hidden w-full md:block md:w-auto">
+          <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:p-0 md:mt-0 md:space-x-6 md:border-0 md:bg-white">
+            <li><a href="../../index.html" data-page="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Home</a></li>
+            <li><a href="about.html" data-page="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">About</a></li>
+            <li><a href="contact.html" data-page="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Contact</a></li>
+            <li><a href="signup.html" data-page="signup.html" class="block px-3 py-2 text-gray-700 hover:text-blue-700">Sign Up</a></li>
+            <li><a href="signin.html" class="block px-4 py-2 mt-2 text-white bg-blue-700 rounded-lg md:mt-0 hover:bg-blue-800">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ========== END NAVBAR ========== -->
+
+  <main class="flex-grow">
+    <section class="max-w-screen-xl px-4 pt-12 pb-8 mx-auto">
+      <h1 class="mb-4 text-3xl font-bold text-gray-900">About UOL Lost &amp; Found</h1>
+      <p class="max-w-3xl text-lg text-gray-600">Students lose books, ID cards and keys every week, and most of them do not know where to ask. This website puts all reported items in one place, so the owner and the finder can reach the same office.</p>
+    </section>
+
+    <!-- COMPONENT 1: Statistics -->
+    <section class="bg-white border-y border-gray-200">
+      <div class="max-w-screen-xl px-4 py-10 mx-auto">
+        <dl class="grid max-w-screen-md grid-cols-2 gap-8 mx-auto text-center text-gray-900 lg:grid-cols-4">
+          <div>
+            <dt class="mb-1 text-3xl font-extrabold md:text-4xl">120</dt>
+            <dd class="text-gray-500">Items reported</dd>
+          </div>
+          <div>
+            <dt class="mb-1 text-3xl font-extrabold md:text-4xl">85</dt>
+            <dd class="text-gray-500">Items returned</dd>
+          </div>
+          <div>
+            <dt class="mb-1 text-3xl font-extrabold md:text-4xl">3</dt>
+            <dd class="text-gray-500">Collection points</dd>
+          </div>
+          <div>
+            <dt class="mb-1 text-3xl font-extrabold md:text-4xl">30</dt>
+            <dd class="text-gray-500">Days items are kept</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- COMPONENT 2: Timeline -->
+    <section class="max-w-screen-xl px-4 py-12 mx-auto">
+      <h2 class="mb-8 text-2xl font-bold text-gray-900">How this project was built</h2>
+      <ol class="relative max-w-2xl border-gray-300 border-s">
+        <li class="mb-10 ms-4">
+          <div class="absolute w-3 h-3 mt-1.5 bg-blue-700 border border-white rounded-full -start-1.5"></div>
+          <time class="mb-1 text-sm text-gray-400">Week 1</time>
+          <h3 class="text-lg font-semibold text-gray-900">Idea and planning</h3>
+          <p class="text-gray-600">Chose the topic, listed the pages and decided what each page should contain.</p>
+        </li>
+        <li class="mb-10 ms-4">
+          <div class="absolute w-3 h-3 mt-1.5 bg-blue-700 border border-white rounded-full -start-1.5"></div>
+          <time class="mb-1 text-sm text-gray-400">Week 2</time>
+          <h3 class="text-lg font-semibold text-gray-900">Layout with Tailwind CSS</h3>
+          <p class="text-gray-600">Built the navbar, footer and Home page using Tailwind CSS and Flowbite components.</p>
+        </li>
+        <li class="mb-10 ms-4">
+          <div class="absolute w-3 h-3 mt-1.5 bg-blue-700 border border-white rounded-full -start-1.5"></div>
+          <time class="mb-1 text-sm text-gray-400">Week 3</time>
+          <h3 class="text-lg font-semibold text-gray-900">Forms and validation</h3>
+          <p class="text-gray-600">Added the Contact, Sign Up and Sign In forms and connected the contact form to Formspree.</p>
+        </li>
+        <li class="ms-4">
+          <div class="absolute w-3 h-3 mt-1.5 bg-blue-700 border border-white rounded-full -start-1.5"></div>
+          <time class="mb-1 text-sm text-gray-400">Week 4</time>
+          <h3 class="text-lg font-semibold text-gray-900">Testing and publishing</h3>
+          <p class="text-gray-600">Checked every page on phone and desktop and published the site on GitHub Pages.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- COMPONENT 3: Team section -->
+    <section class="bg-white border-y border-gray-200">
+      <div class="max-w-screen-xl px-4 py-12 mx-auto">
+        <h2 class="mb-8 text-2xl font-bold text-gray-900">Our team</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="p-6 text-center border border-gray-200 rounded-lg bg-gray-50">
+            <div class="flex items-center justify-center w-20 h-20 mx-auto mb-3 text-2xl font-bold text-blue-800 bg-blue-100 rounded-full">YN</div>
+            <h3 class="text-lg font-semibold text-gray-900">Your Name</h3>
+            <p class="text-gray-500">Developer</p>
+          </div>
+          <div class="p-6 text-center border border-gray-200 rounded-lg bg-gray-50">
+            <div class="flex items-center justify-center w-20 h-20 mx-auto mb-3 text-2xl font-bold text-blue-800 bg-blue-100 rounded-full">TM</div>
+            <h3 class="text-lg font-semibold text-gray-900">Team Member</h3>
+            <p class="text-gray-500">Designer</p>
+          </div>
+          <div class="p-6 text-center border border-gray-200 rounded-lg bg-gray-50">
+            <div class="flex items-center justify-center w-20 h-20 mx-auto mb-3 text-2xl font-bold text-blue-800 bg-blue-100 rounded-full">TM</div>
+            <h3 class="text-lg font-semibold text-gray-900">Team Member</h3>
+            <p class="text-gray-500">Content writer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 4: Testimonials -->
+    <section class="max-w-screen-xl px-4 py-12 mx-auto">
+      <h2 class="mb-8 text-2xl font-bold text-gray-900">What students say</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <figure class="p-6 bg-white border border-gray-200 rounded-lg">
+          <blockquote class="mb-4 text-gray-700">I left my calculator in the exam hall and found it listed here the next morning.</blockquote>
+          <figcaption class="text-sm font-medium text-gray-900">Ayesha, BSCS</figcaption>
+        </figure>
+        <figure class="p-6 bg-white border border-gray-200 rounded-lg">
+          <blockquote class="mb-4 text-gray-700">I found a student card near the cafeteria and knew exactly where to hand it in.</blockquote>
+          <figcaption class="text-sm font-medium text-gray-900">Hamza, BBA</figcaption>
+        </figure>
+        <figure class="p-6 bg-white border border-gray-200 rounded-lg">
+          <blockquote class="mb-4 text-gray-700">The office replied to my form within a day and I got my keys back.</blockquote>
+          <figcaption class="text-sm font-medium text-gray-900">Sara, BSSE</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- COMPONENT 5: Accordion (frequently asked questions) -->
+    <section class="bg-white border-t border-gray-200">
+      <div class="max-w-screen-xl px-4 py-12 mx-auto">
+        <h2 class="mb-6 text-2xl font-bold text-gray-900">Frequently asked questions</h2>
+        <div id="accordion-faq" data-accordion="collapse" class="max-w-3xl">
+
+          <h3 id="faq-heading-1">
+            <button type="button" class="flex items-center justify-between w-full gap-3 p-5 font-medium text-left text-gray-700 border border-b-0 border-gray-200 rounded-t-lg hover:bg-gray-50" data-accordion-target="#faq-body-1" aria-expanded="true" aria-controls="faq-body-1">
+              <span>How long are found items kept?</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h3>
+          <div id="faq-body-1" class="hidden" aria-labelledby="faq-heading-1">
+            <div class="p-5 text-gray-600 border border-b-0 border-gray-200">Items are kept for 30 days. After that they are handed over to the administration.</div>
+          </div>
+
+          <h3 id="faq-heading-2">
+            <button type="button" class="flex items-center justify-between w-full gap-3 p-5 font-medium text-left text-gray-700 border border-b-0 border-gray-200 hover:bg-gray-50" data-accordion-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2">
+              <span>What should I bring to collect my item?</span>
+              <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h3>
+          <div id="faq-body-2" class="hidden" aria-labelledby="faq-heading-2">
+            <div class="p-5 text-gray-600 border border-b-0 border-gray-200">Bring your student ID and be ready to describe the item, for example its colour, brand or anything written on it.</div>
+          </div>
+
+          <h3 id="faq-heading-3">
+            <button type="button" class="flex items-center justify-between w-full gap-3 p-5 font-medium text-left text-gray-700 border border-gray-200 hover:bg-gray-50" data-accordion-target="#faq-body-3" aria-expanded="false" aria-controls="faq-body-3">
+              <span>Do I need an account to report an item?</span>
+              <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h3>
+          <div id="faq-body-3" class="hidden" aria-labelledby="faq-heading-3">
+            <div class="p-5 text-gray-600 border border-t-0 border-gray-200">No. Anyone can use the contact form to report a lost or found item.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER (same on every page) ========== -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-screen-xl p-4 mx-auto md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="../../index.html" class="text-lg font-bold text-blue-800">UOL Lost &amp; Found</a>
+        <ul class="flex flex-wrap items-center mt-4 text-sm font-medium text-gray-500 sm:mt-0">
+          <li><a href="../../index.html" class="hover:underline me-4 md:me-6">Home</a></li>
+          <li><a href="about.html" class="hover:underline me-4 md:me-6">About</a></li>
+          <li><a href="contact.html" class="hover:underline me-4 md:me-6">Contact</a></li>
+          <li><a href="signin.html" class="hover:underline">Sign In</a></li>
+        </ul>
+      </div>
+      <hr class="my-4 border-gray-200 sm:mx-auto lg:my-6" />
+      <span class="block text-sm text-gray-500 sm:text-center">&copy; <span id="year">2026</span> UOL Lost &amp; Found. Web Engineering, Assignment 01, The University of Lahore.</span>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

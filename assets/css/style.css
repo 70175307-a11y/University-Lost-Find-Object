@@ -1,0 +1,17 @@
+/* Small custom rules that Tailwind classes do not cover */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* red message shown under an input that fails validation */
+.error-text {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+/* red border for an invalid input */
+.input-error {
+  border-color: #ef4444 !important;
+}
